@@ -1,0 +1,25 @@
+<!-- Navigation Partial - Secondary navigation and breadcrumbs -->
+<nav class="bg-gray-100 border-bottom" style="padding: 12px 0;">
+    <div class="container px-4">
+        <div class="d-flex align-items-center gap-4" style="font-size: 0.875rem;">
+            <a href="/" class="text-secondary" style="text-decoration: none;">
+                <i class="fas fa-home" style="margin-right: 4px;"></i>Home
+            </a>
+            <span class="text-secondary" style="opacity: 0.5;">/</span>
+            @if (ViewData["PageTitle"] != null)
+            {
+                <span class="text-primary font-bold">@ViewData["PageTitle"]</span>
+            }
+            else
+            {
+                <span class="text-primary font-bold">Current Page</span>
+            }
+        </div>
+    </div>
+</nav>
+
+<style>
+    nav a:hover {
+        text-decoration: underline;
+    }
+</style>

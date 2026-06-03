@@ -1,8 +1,111 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home | NoteBook";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 60px 20px;">
+    <!-- Hero Section -->
+    <section style="text-align: center; margin-bottom: 80px;">
+        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; color: #1a1a1a; font-family: 'Iceland', sans-serif;">
+            NoteBook
+        </h1>
+        <p style="font-size: 1.25rem; color: #666; margin-bottom: 30px; line-height: 1.6;">
+            A production-ready note management application built with clean architecture, modern design, and enterprise-grade features.
+        </p>
+    </section>
+
+    <!-- Features Grid -->
+    <section style="margin-bottom: 80px;">
+        <h2 style="font-size: 2rem; margin-bottom: 40px; color: #1a1a1a; text-align: center;">Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+            <!-- Clean Architecture -->
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 8px;">
+                <i class="fas fa-layer-group" style="font-size: 2rem; color: #1a1a1a; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 10px;">Clean Architecture</h3>
+                <p style="color: #666; line-height: 1.6;">4-layer architecture with Domain, Application, Infrastructure, and Web layers.</p>
+            </div>
+
+            <!-- CQRS Pattern -->
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 8px;">
+                <i class="fas fa-code-branch" style="font-size: 2rem; color: #1a1a1a; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 10px;">CQRS Pattern</h3>
+                <p style="color: #666; line-height: 1.6;">Implemented with MediatR for separation of concerns and clean command/query handling.</p>
+            </div>
+
+            <!-- JWT Authentication -->
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 8px;">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #1a1a1a; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 10px;">JWT Security</h3>
+                <p style="color: #666; line-height: 1.6;">Secure authentication with JWT tokens and role-based authorization.</p>
+            </div>
+
+            <!-- PostgreSQL -->
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 8px;">
+                <i class="fas fa-database" style="font-size: 2rem; color: #1a1a1a; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 10px;">PostgreSQL</h3>
+                <p style="color: #666; line-height: 1.6;">Robust database with Dapper ORM for efficient data access and type-safe queries.</p>
+            </div>
+
+            <!-- Rate Limiting -->
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 8px;">
+                <i class="fas fa-tachometer-alt" style="font-size: 2rem; color: #1a1a1a; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 10px;">Rate Limiting</h3>
+                <p style="color: #666; line-height: 1.6;">Built-in rate limiting policies for API protection and fair resource usage.</p>
+            </div>
+
+            <!-- Health Checks -->
+            <div style="background: #f5f5f5; padding: 30px; border-radius: 8px;">
+                <i class="fas fa-heartbeat" style="font-size: 2rem; color: #1a1a1a; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.3rem; color: #1a1a1a; margin-bottom: 10px;">Health Checks</h3>
+                <p style="color: #666; line-height: 1.6;">Comprehensive health monitoring with liveness and readiness endpoints.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section style="background: #1a1a1a; color: white; padding: 40px; border-radius: 8px; text-align: center;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 30px;">Get Started</h2>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="/notes" style="display: inline-block; background: white; color: #1a1a1a; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; cursor: pointer;">
+                View Notes
+            </a>
+            <a href="/health" style="display: inline-block; border: 2px solid white; color: white; padding: 10px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; cursor: pointer;">
+                Health Status
+            </a>
+            <a href="https://localhost:5215/auth" style="display: inline-block; border: 2px solid white; color: white; padding: 10px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; cursor: pointer;">
+                Authenticate
+            </a>
+        </div>
+    </section>
+
+    <!-- API Info -->
+    <section style="margin-top: 60px; background: #f5f5f5; padding: 30px; border-radius: 8px;">
+        <h2 style="font-size: 1.5rem; color: #1a1a1a; margin-bottom: 20px;">API Endpoints</h2>
+        <ul style="color: #666; line-height: 2; font-family: 'Courier New', monospace; font-size: 0.95rem;">
+            <li><strong>POST</strong> /api/auth/register - Register new user</li>
+            <li><strong>POST</strong> /api/auth/login - Login and get JWT token</li>
+            <li><strong>GET</strong> /api/notes - Get all notes (paginated)</li>
+            <li><strong>POST</strong> /api/notes - Create new note</li>
+            <li><strong>GET</strong> /api/notes/{id} - Get note by ID</li>
+            <li><strong>PUT</strong> /api/notes/{id} - Update note</li>
+            <li><strong>DELETE</strong> /api/notes/{id} - Delete note</li>
+            <li><strong>GET</strong> /api/notes/search - Search notes (with pagination)</li>
+            <li><strong>GET</strong> /health - Full health check</li>
+            <li><strong>GET</strong> /health/live - Liveness probe</li>
+            <li><strong>GET</strong> /health/ready - Readiness probe</li>
+        </ul>
+    </section>
 </div>
+
+<style>
+    h1, h2, h3 {
+        font-family: 'Iceland', sans-serif;
+    }
+
+    a {
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        opacity: 0.85;
+    }
+</style>

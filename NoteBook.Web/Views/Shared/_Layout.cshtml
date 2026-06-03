@@ -15,74 +15,13 @@
     <link rel="stylesheet" href="~/NoteBook.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="d-flex flex-justify-between align-items-center px-4 py-4 border-bottom">
-            <div class="d-flex align-items-center gap-4">
-                <a class="text-primary fw-bold text-lg" asp-area="" asp-controller="Home" asp-action="Index">
-                    📔 NoteBook
-                </a>
-            </div>
-            
-            <ul class="nav d-none-sm">
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Notes" asp-action="Index">Notes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </li>
-            </ul>
-
-            <button id="mobile-menu-btn" class="btn btn-outline d-block-sm p-2" aria-label="Toggle navigation">
-                ☰
-            </button>
-        </nav>
-        
-        <!-- Mobile Navigation Menu -->
-        <nav id="mobile-menu" class="d-none-sm d-block-sm overflow-hidden transition-base" style="max-height: 0;">
-            <ul class="nav flex-column p-4 gap-2">
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Notes" asp-action="Index">Notes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    @await Html.PartialAsync("_Header")
 
     <main role="main" class="container py-8">
         @RenderBody()
     </main>
 
-    <footer class="border-top bg-secondary mt-12">
-        <div class="container py-8">
-            <div class="d-flex flex-column gap-6">
-                <div class="d-flex flex-justify-between align-items-start flex-column-sm gap-4">
-                    <div>
-                        <h5 class="fw-bold mb-3">NoteBook</h5>
-                        <p class="text-secondary text-sm">A modern note-taking application built with clean architecture and ASP.NET Core.</p>
-                    </div>
-                    <div class="text-right text-left-sm">
-                        <p class="text-secondary text-sm">
-                            &copy; 2026 - NoteBook
-                        </p>
-                    </div>
-                </div>
-                <div class="border-top pt-6">
-                    <p class="text-secondary text-sm text-center mb-0">
-                        <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-secondary">Privacy Policy</a> · 
-                        <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-secondary">Terms of Service</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @await Html.PartialAsync("_Footer")
 
     <!-- Application JavaScript -->
     <!-- Core utilities and AJAX -->

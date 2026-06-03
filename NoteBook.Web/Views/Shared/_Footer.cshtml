@@ -1,0 +1,73 @@
+<!-- Footer Partial - Site footer with links and copyright -->
+<footer class="border-top bg-gray-100 mt-8">
+    <div class="container py-8">
+        <!-- Footer Content -->
+        <div class="d-flex flex-column gap-6">
+            <!-- Footer Top Section -->
+            <div class="d-flex justify-content-between align-items-start flex-column gap-4">
+                <!-- Brand Info -->
+                <div>
+                    <h5 class="font-bold mb-3" style="margin-top: 0;">
+                        <i class="fas fa-book" style="margin-right: 8px;"></i>NoteBook
+                    </h5>
+                    <p class="text-secondary text-sm" style="margin: 0;">
+                        A modern note-taking application built with clean architecture and ASP.NET Core.
+                    </p>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-right" style="width: 100%;">
+                    <p class="text-secondary text-sm" style="margin: 0;">
+                        &copy; 2026 - NoteBook. All rights reserved.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section - Links -->
+            <div class="border-top pt-6">
+                <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+                    <a href="/privacy" class="text-secondary" style="text-decoration: none; font-size: 0.875rem;">
+                        Privacy Policy
+                    </a>
+                    <span class="text-secondary" style="opacity: 0.5;">·</span>
+                    <a href="/privacy" class="text-secondary" style="text-decoration: none; font-size: 0.875rem;">
+                        Terms of Service
+                    </a>
+                    <span class="text-secondary" style="opacity: 0.5;">·</span>
+                    <a href="/" class="text-secondary" style="text-decoration: none; font-size: 0.875rem;">
+                        Home
+                    </a>
+                </div>
+
+                <!-- Social Links (Optional) -->
+                <div class="d-flex justify-content-center align-items-center gap-6 mt-4">
+                    <a href="#" class="text-secondary" aria-label="GitHub" style="font-size: 1.2rem; text-decoration: none;">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-secondary" aria-label="Twitter" style="font-size: 1.2rem; text-decoration: none;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-secondary" aria-label="Email" style="font-size: 1.2rem; text-decoration: none;">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer a:hover {
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+    }
+
+    footer .text-secondary {
+        color: #999;
+    }
+
+    footer .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+</style>

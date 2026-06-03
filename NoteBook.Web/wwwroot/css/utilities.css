@@ -141,6 +141,13 @@
 .font-semibold { font-weight: var(--font-weight-semibold) !important; }
 .font-bold { font-weight: var(--font-weight-bold) !important; }
 
+/* Abbreviations for font-weight */
+.fw-light { font-weight: var(--font-weight-light) !important; }
+.fw-normal { font-weight: var(--font-weight-normal) !important; }
+.fw-medium { font-weight: var(--font-weight-medium) !important; }
+.fw-semibold { font-weight: var(--font-weight-semibold) !important; }
+.fw-bold { font-weight: var(--font-weight-bold) !important; }
+
 .italic { font-style: italic !important; }
 .not-italic { font-style: normal !important; }
 
@@ -220,6 +227,10 @@
 .d-flex.flex-column { flex-direction: column !important; }
 .d-flex.flex-row { flex-direction: row !important; }
 .d-flex.flex-wrap { flex-wrap: wrap !important; }
+
+.flex-column { flex-direction: column !important; }
+.flex-row { flex-direction: row !important; }
+.flex-wrap { flex-wrap: wrap !important; }
 
 .align-items-start { align-items: flex-start !important; }
 .align-items-center { align-items: center !important; }
@@ -336,10 +347,14 @@
 
 /* ============= RESPONSIVE UTILITIES ============= */
 
+/* Small screens (mobile) */
 @media (max-width: 576px) {
   .d-none-sm { display: none !important; }
   .d-block-sm { display: block !important; }
   .d-flex-sm { display: flex !important; }
+  .d-none { display: block !important; }
+  
+  .flex-column { flex-direction: column !important; }
   
   .text-left-sm { text-align: left !important; }
   .text-center-sm { text-align: center !important; }
@@ -347,12 +362,14 @@
   .px-sm-2 { padding-left: var(--spacing-2) !important; padding-right: var(--spacing-2) !important; }
 }
 
+/* Medium screens (tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
   .d-none-md { display: none !important; }
   .d-block-md { display: block !important; }
   .d-flex-md { display: flex !important; }
 }
 
+/* Large screens (desktops) */
 @media (min-width: 769px) {
   .d-none-lg { display: none !important; }
   .d-block-lg { display: block !important; }
