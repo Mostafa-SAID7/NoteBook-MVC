@@ -48,46 +48,51 @@ Complete guide to NoteBook documentation files. Start here to find what you're l
 
 | File | Purpose |
 |------|---------|
-| [README.md](../README.md) | Project overview, features, tech stack, quick links |
-| [SETUP.md](../SETUP.md) | Installation guide (local + Docker) |
-| [database.sql](../database.sql) | PostgreSQL schema initialization |
-| [Dockerfile](../Dockerfile) | Docker image definition |
-| [docker-compose.yml](../docker-compose.yml) | Local development stack (app + postgres) |
+| [README.md](../README.md) | Project overview & quick links |
+| [SETUP.md](../SETUP.md) | Installation (local + Docker) |
+| [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) | Delivery checklist |
 
 ### Docs Folder
 
-| File | Purpose | Audience |
-|------|---------|----------|
-| [INDEX.md](INDEX.md) | This file - documentation navigation | Everyone |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Code structure, design patterns, layers | Developers |
-| [API.md](API.md) | REST API documentation with examples | Developers, Testers |
-| [DEVELOPMENT.md](DEVELOPMENT.md) | Development workflow, standards, tools | Developers |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines, code style | Contributors |
-| [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment, scaling, monitoring | DevOps, Operations |
-| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common issues and solutions | Everyone |
+| File | Purpose |
+|------|---------|
+| [INDEX.md](INDEX.md) | Navigation hub |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Code structure & patterns |
+| [API.md](API.md) | Endpoint documentation |
+| [DEVELOPMENT.md](DEVELOPMENT.md) | Development workflow |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common issues |
+
+### Database
+
+- [db/README.md](../db/README.md) - Database schema & operations
+- [db/schema.sql](../db/schema.sql) - Main schema
+- [db/migrations/](../db/migrations/) - Schema migrations
+- [db/seeds/](../db/seeds/) - Sample data
 
 ## 🔍 Common Questions
 
 ### "How do I get started?"
-→ Read [SETUP.md](../SETUP.md)
+→ Read [README.md](../README.md) then [SETUP.md](../SETUP.md)
 
 ### "How does the code work?"
-→ Read [docs/ARCHITECTURE.md](ARCHITECTURE.md) then [docs/DEVELOPMENT.md](DEVELOPMENT.md)
+→ Read [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ### "How do I test the API?"
-→ Read [docs/API.md](API.md)
+→ Read [API.md](API.md)
 
 ### "How do I deploy this?"
-→ Read [docs/DEPLOYMENT.md](DEPLOYMENT.md)
+→ Read [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ### "Something's broken, how do I fix it?"
-→ Check [docs/TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+→ Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
 ### "How can I contribute?"
-→ Read [docs/CONTRIBUTING.md](CONTRIBUTING.md)
+→ Read [CONTRIBUTING.md](CONTRIBUTING.md)
 
-### "I'm stuck, what do I do?"
-→ Check [docs/TROUBLESHOOTING.md](TROUBLESHOOTING.md) then see CONTRIBUTING.md for asking for help
+### "How do I setup the database?"
+→ Read [db/README.md](../db/README.md)
 
 ## 🏗️ Architecture Quick Reference
 
@@ -139,10 +144,11 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for more commands.
 
 All documentation follows these principles:
 
-- **Clear**: Avoid jargon, use examples
-- **Complete**: Cover main scenarios and edge cases
-- **Accessible**: Different skill levels catered to
-- **Maintainable**: Easy to update and version
+- **Clear**: Concise, avoid unnecessary jargon
+- **Complete**: Cover main scenarios
+- **Accessible**: Different skill levels
+- **Maintainable**: Easy to update
+- **DRY**: No duplication across files
 
 ## 🔗 External Resources
 
