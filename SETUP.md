@@ -1,48 +1,69 @@
 # Setup Guide
 
-Quick start for local development and Docker deployment.
+Complete setup for local development and Docker deployment.
 
-## 🐳 Docker (Fastest)
+## 🐳 Docker (Recommended - Fastest)
 
+### Option 1: Use Pre-built Image from Docker Hub
+```bash
+# Pull and run
+docker pull msaid356/notebook:latest
+docker-compose up -d
+
+# Access at http://localhost:5000
+```
+
+### Option 2: Build from Source
 ```bash
 git clone https://github.com/yourusername/NoteBook.git
 cd NoteBook
-docker-compose up --build
+docker-compose -f docker-compose.build.yml up -d
 ```
 
-Application running at: **http://localhost:5000**
+### Docker Hub Information
+- **Username:** `msaid356`
+- **Password:** `Memo@3560`
+- **Image:** `msaid356/notebook`
+- **Registry:** https://hub.docker.com/r/msaid356/notebook
 
-> Includes PostgreSQL, application, and schema initialization
+### Docker Commands
+```bash
+# Build and push to Docker Hub
+docker build -t msaid356/notebook:latest .
+docker push msaid356/notebook:latest
+
+# Run locally
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop
+docker-compose down
+```
 
 ## 💻 Local Development
 
 ### Prerequisites
-- .NET 9 SDK: https://dotnet.microsoft.com/download/dotnet/9.0
+- .NET 10 SDK: https://dotnet.microsoft.com/download
 - PostgreSQL 16: https://www.postgresql.org/download/
 
-### Setup Steps
+### Steps
 
-1. **Clone & restore**
+1. **Clone repository**
    ```bash
    git clone https://github.com/yourusername/NoteBook.git
    cd NoteBook
    dotnet restore
    ```
 
-2. **Setup PostgreSQL**
+2. **Setup database**
    ```bash
-   # Create database
    psql -U postgres -c "CREATE DATABASE notebook_db;"
-   
-   # Initialize schema
    psql -U postgres -d notebook_db -f db/schema.sql
    ```
 
-3. **Configure connection** (if needed)
-   - Edit: `NoteBook.Web/appsettings.json`
-   - Connection string already uses defaults (postgres:postgres)
-
-4. **Build & run**
+3. **Run application**
    ```bash
    dotnet build
    cd NoteBook.Web
@@ -51,52 +72,40 @@ Application running at: **http://localhost:5000**
 
 Application running at: **http://localhost:5000**
 
-## 📝 Configuration
-
-### Connection String
-File: `NoteBook.Web/appsettings.json`
-
-```json
-"DefaultConnection": "Host=localhost;Port=5432;Database=notebook_db;Username=postgres;Password=postgres"
-```
-
-### Environment Variables
-```bash
-ASPNETCORE_ENVIRONMENT=Development
-ASPNETCORE_URLS=http://+:5000
-```
-
 ## ✅ Verify Installation
 
 ```bash
+# Health check
+curl http://localhost:5000/health
+
 # Test API
 curl http://localhost:5000/api/notes
-
-# Should return: [] (empty array)
 ```
 
-## 🐛 Troubleshooting
+## 🐛 Common Issues
 
-**Connection refused?**
-- Ensure PostgreSQL is running: `psql -U postgres -c "SELECT 1;"`
-- Check port 5432 availability
-
-**Database doesn't exist?**
-- Create it: `psql -U postgres -c "CREATE DATABASE notebook_db;"`
-- Initialize: `psql -U postgres -d notebook_db -f db/schema.sql`
+**PostgreSQL not running?**
+```bash
+# Check: psql -U postgres -c "SELECT 1;"
+```
 
 **Port 5000 in use?**
-- Use different port: `export ASPNETCORE_URLS=http://+:5001`
+```bash
+# Change port in docker-compose.yml or appsettings.json
+```
 
-See [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for more issues.
+**Database connection failed?**
+```bash
+# Check connection string in appsettings.json
+# Default: Host=localhost;Port=5432;Database=notebook_db;Username=postgres;Password=postgres
+```
 
 ## 📚 Next Steps
 
-- [API Documentation](docs/API.md)
-- [Architecture Guide](docs/ARCHITECTURE.md)
-- [Development Workflow](docs/DEVELOPMENT.md)
-- [All Documentation](docs/INDEX.md)
+- Test API endpoints: [docs/API.md](docs/API.md)
+- Understand architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- Deploy to production: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
 
 ---
 
-**Need help?** Check [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
+**Need help?** Check [docs/INDEX.md](docs/INDEX.md) for all documentation

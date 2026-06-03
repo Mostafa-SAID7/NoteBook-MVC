@@ -20,8 +20,11 @@ services:
       timeout: 5s
       retries: 5
 
-  # NoteBook Application
+  # NoteBook Application (Build from source)
   notebook-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: msaid356/notebook:latest
     container_name: notebook_api
     environment:

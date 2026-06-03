@@ -3,61 +3,53 @@
     ViewData["Title"] = "Error";
 }
 
-<div class="error-page-container">
-    <!-- Animated Background Elements -->
-    <div class="error-background">
-        <div class="error-circle error-circle-1"></div>
-        <div class="error-circle error-circle-2"></div>
-        <div class="error-circle error-circle-3"></div>
+<div class="position-relative w-full min-h-screen overflow-hidden" style="background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);">
+    <!-- Animated Background -->
+    <div class="position-absolute inset-0 pointer-events-none">
+        <div class="position-absolute rounded-full opacity-0 animate-float" style="width: 200px; height: 200px; background: #1a1a1a; top: -50px; right: -50px; opacity: 0.05;"></div>
+        <div class="position-absolute rounded-full opacity-0 animate-float" style="width: 150px; height: 150px; background: #1a1a1a; bottom: 10%; left: 5%; opacity: 0.05; animation-delay: 1s;"></div>
+        <div class="position-absolute rounded-full opacity-0 animate-float" style="width: 100px; height: 100px; background: #666; top: 20%; left: 10%; opacity: 0.05; animation-delay: 2s;"></div>
     </div>
 
     <!-- Error Content -->
-    <div class="error-content d-flex flex-column align-items-center gap-6 py-12 min-h-screen justify-content-center">
-        <div class="text-center error-inner">
-            <!-- Error Icon with Animation -->
-            <div class="error-icon-wrapper">
-                <i class="fas fa-exclamation-triangle error-icon"></i>
+    <div class="position-relative d-flex flex-column align-items-center justify-content-center min-h-screen py-8 px-4 animate-slide-up" style="z-index: 1;">
+        <div class="text-center max-w-container">
+            <!-- Icon -->
+            <div class="mb-4 animate-bounce">
+                <i class="fas fa-exclamation-triangle animate-pulse" style="font-size: 4rem; color: #1a1a1a;"></i>
             </div>
 
-            <!-- Error Title -->
-            <h1 class="text-3xl font-bold text-primary error-title">Oops!</h1>
-            <p class="text-lg text-secondary error-subtitle">Something went wrong</p>
+            <!-- Title -->
+            <h1 class="text-3xl font-bold text-primary mb-2 animate-slide-up animate-delay-100">Oops!</h1>
+            <p class="text-lg text-secondary mb-6 opacity-75 animate-slide-up animate-delay-200">Something went wrong</p>
 
             <!-- Error Message -->
-            <h2 class="text-xl text-secondary error-message">An error occurred while processing your request.</h2>
+            <h2 class="text-xl text-secondary mb-6 animate-slide-up animate-delay-300">An error occurred while processing your request.</h2>
 
-            <!-- Request ID (if available) -->
+            <!-- Request ID -->
             @if (Model.ShowRequestId)
             {
-                <div class="error-request-id">
-                    <p>
-                        <strong>Request ID:</strong> 
-                    </p>
-                    <code>@Model.RequestId</code>
+                <div class="mb-6 animate-slide-up animate-delay-400">
+                    <p class="text-sm text-secondary mb-3"><strong>Request ID:</strong></p>
+                    <code class="d-inline-block px-4 py-2 bg-gray-100 rounded text-sm animate-fade-in animate-delay-500" style="border: 1px solid #ddd; word-break: break-all; font-family: monospace;">@Model.RequestId</code>
                 </div>
             }
 
-            <!-- Development Information -->
-            <div class="bg-gray-100 p-6 rounded mb-8 text-left max-w-600 error-info-box">
-                <div class="d-flex">
-                    <i class="fas fa-info-circle text-primary"></i>
+            <!-- Info Box -->
+            <div class="bg-gray-100 p-6 rounded shadow-sm mb-6 text-left animate-slide-up animate-delay-500" style="border-left: 4px solid #1a1a1a; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div class="d-flex gap-3 mb-4">
+                    <i class="fas fa-info-circle text-primary" style="font-size: 1.2rem; margin-top: 4px;"></i>
                     <div>
-                        <h3>Development Mode</h3>
-                        <p>
-                            The Development environment provides detailed error information to help with debugging.
-                        </p>
-                        <p>
-                            <strong>⚠️ Security Note:</strong> Don't enable Development mode in production as it may expose sensitive information.
-                        </p>
-                        <p>
-                            To enable debugging locally, set <code>ASPNETCORE_ENVIRONMENT=Development</code> and restart the app.
-                        </p>
+                        <h3 class="font-semibold mb-3 text-primary">Development Mode</h3>
+                        <p class="text-secondary text-sm mb-3 line-height-relaxed">The Development environment provides detailed error information to help with debugging.</p>
+                        <p class="text-secondary text-sm mb-3 line-height-relaxed"><strong>⚠️ Security Note:</strong> Don't enable Development mode in production as it may expose sensitive information.</p>
+                        <p class="text-secondary text-sm mb-0 line-height-relaxed">To enable debugging locally, set <code class="bg-white px-2 py-1 rounded" style="font-family: monospace; font-size: 0.85em;">ASPNETCORE_ENVIRONMENT=Development</code> and restart the app.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="error-actions">
+            <!-- Actions -->
+            <div class="d-flex gap-4 justify-content-center flex-wrap animate-slide-up animate-delay-600">
                 <a href="/" class="btn btn-primary">
                     <i class="fas fa-home"></i>Back to Home
                 </a>
@@ -66,10 +58,10 @@
                 </button>
             </div>
 
-            <!-- Footer Help -->
-            <div class="error-help-footer">
-                <p>
-                    Need help? <a href="/">Contact Support</a>
+            <!-- Help Footer -->
+            <div class="mt-8 text-center">
+                <p class="text-secondary text-sm m-0">
+                    Need help? <a href="/" class="text-primary" style="text-decoration: underline;">Contact Support</a>
                 </p>
             </div>
         </div>

@@ -19,6 +19,9 @@ public static class PipelineConfiguration
         // Add global exception handling
         app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
+        // Configure Swagger UI (available in all environments)
+        SwaggerConfiguration.UseSwaggerUI(app);
+
         // Configure environment-specific pipeline
         if (!app.Environment.IsDevelopment())
         {
@@ -40,5 +43,13 @@ public static class PipelineConfiguration
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}")
             .WithStaticAssets();
+
+        // Handle 404 - Not Found routes (catch-all at the end)
+        app.MapFallback((context) =>
+        {
+            context.Request.RouteValues["controller"] = "Home";
+            context.Request.RouteValues["action"] = "PageNotFound";
+            return Task.CompletedTask;
+        });
     }
 }

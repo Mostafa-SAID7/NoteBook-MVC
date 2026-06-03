@@ -2,16 +2,21 @@
 
 A production-grade note-taking application with clean architecture, PostgreSQL, and Dapper.
 
-**Status**: ✅ Production-Ready | **Version**: 2.1.0 | **Framework**: ASP.NET Core 9 | **Phase**: 5 (Rate Limiting Recommended)
+**Status**: ✅ Production-Ready | **Version**: 2.1.0 | **Framework**: ASP.NET Core 10 | **Phase**: 5 (Rate Limiting Recommended)
 
 ## 🚀 Quick Start
 
 ### Docker (Recommended)
 ```bash
+# Using pre-built image from Docker Hub
+docker pull msaid356/notebook:latest
+docker-compose up -d
+# API: http://localhost:5000
+
+# Or build from source
 git clone https://github.com/yourusername/NoteBook.git
 cd NoteBook
-docker-compose up
-# API: http://localhost:5000
+docker-compose -f docker-compose.build.yml up -d
 ```
 
 ### Local Development
@@ -30,20 +35,14 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 
 | Document | Purpose |
 |----------|---------|
-| [SETUP.md](SETUP.md) | Installation & setup guide |
-| [ADVANCED_FEATURES_REVIEW.md](ADVANCED_FEATURES_REVIEW.md) | Rate limiting & caching review |
-| [ADVANCED_FEATURES_STATUS.md](ADVANCED_FEATURES_STATUS.md) | Current feature status |
-| [DOMAIN_ENHANCEMENTS.md](DOMAIN_ENHANCEMENTS.md) | Domain layer improvements |
-| [docs/INDEX.md](docs/INDEX.md) | Documentation navigation |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Code structure & patterns |
-| [docs/DOMAIN_LAYER.md](docs/DOMAIN_LAYER.md) | Domain entities & patterns |
+| [SETUP.md](SETUP.md) | Complete installation & Docker guide |
 | [docs/API.md](docs/API.md) | API endpoints & examples |
-| [docs/HEALTH_CHECKS.md](docs/HEALTH_CHECKS.md) | Health check endpoints |
-| [docs/PAGINATION.md](docs/PAGINATION.md) | Pagination guide |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Code structure & patterns |
 | [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) | Development workflow |
-| [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) | Contribution guidelines |
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Production deployment |
+| [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) | Contribution guidelines |
 | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Common issues & fixes |
+| [docs/INDEX.md](docs/INDEX.md) | Complete documentation index |
 
 ## ✨ Features
 
@@ -71,13 +70,14 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 
 ## 🛠 Tech Stack
 
-- **Backend**: ASP.NET Core 9.0
+- **Backend**: ASP.NET Core 10.0
 - **Database**: PostgreSQL 16
 - **Data Access**: Dapper + Npgsql
 - **Architecture**: Clean Architecture + CQRS
 - **Orchestration**: MediatR
 - **Logging**: Serilog
 - **Containerization**: Docker
+- **Registry**: Docker Hub (msaid356/notebook)
 
 ## 📊 Project Structure
 
@@ -116,20 +116,20 @@ Full documentation: [docs/API.md](docs/API.md)
 
 ## 📋 Requirements
 
-- .NET 9 SDK
+- .NET 10 SDK
 - PostgreSQL 16 (or Docker)
-- Docker & Docker Compose (optional)
+- Docker & Docker Compose (optional, but recommended)
 
 ## 🆘 Issues & Support
 
 - **Stuck?** Check [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
-- **Question?** See [docs/INDEX.md](docs/INDEX.md) for navigation
-- **Bug?** Open GitHub Issue (use template)
+- **Question?** See [docs/INDEX.md](docs/INDEX.md)
+- **Bug?** Open GitHub Issue
 - **Feature Request?** Open GitHub Discussion
 
 ## 📄 License
 
-[To be determined]
+MIT License - See [LICENSE](LICENSE)
 
 ## 🙏 Acknowledgments
 

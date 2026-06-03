@@ -26,10 +26,13 @@
 /* 4. Base Styles */
 @import url('./base.css');
 
-/* 4. Layout */
+/* 5. Animations - Centralized Keyframes */
+@import url('./animations.css');
+
+/* 6. Layout */
 @import url('./layout.css');
 
-/* 5. Components */
+/* 7. Components */
 @import url('./components/buttons.css');
 @import url('./components/forms.css');
 @import url('./components/cards.css');
@@ -39,7 +42,6 @@
 @import url('./components/modals.css');
 @import url('./components/dropdowns.css');
 @import url('./components/advanced.css');
-@import url('./components/error-page.css');
 
 /* 6. Utilities */
 @import url('./utilities.css');

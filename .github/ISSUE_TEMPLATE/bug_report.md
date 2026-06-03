@@ -24,9 +24,9 @@ What actually happened instead.
 
 ## Environment
 - **OS**: Windows 10 / macOS 13 / Ubuntu 22.04
-- **.NET Version**: 9.0
+- **.NET Version**: 10.0
 - **PostgreSQL Version**: 16
-- **Docker Version**: (if using Docker) 20.10
+- **Docker Version**: (if using Docker) 20.10+
 - **Browser**: (if applicable) Chrome 120
 
 ## Screenshots

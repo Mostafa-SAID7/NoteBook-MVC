@@ -23,4 +23,15 @@ public class HomeController : Controller
         ViewData["PageTitle"] = "Privacy Policy";
         return View();
     }
+
+    /// <summary>
+    /// PageNotFound action - displays 404 page for missing routes
+    /// </summary>
+    public IActionResult PageNotFound()
+    {
+        Response.StatusCode = 404;
+        ViewData["PageTitle"] = "Page Not Found";
+        ViewData["RequestPath"] = Request.Path;
+        return View("NotFound");
+    }
 }

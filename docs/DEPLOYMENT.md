@@ -24,15 +24,22 @@ Complete guide to deploying NoteBook to production environments.
 ### Building Docker Image
 
 ```bash
-# Build image
-docker build -t notebook:latest .
+# Build image with .NET 10
+docker build -t msaid356/notebook:latest .
 
-# Tag for registry
-docker tag notebook:latest your-registry/notebook:1.0.0
+# Tag for specific version
+docker tag msaid356/notebook:latest msaid356/notebook:v1.0.0
 
-# Push to registry
-docker push your-registry/notebook:1.0.0
+# Push to Docker Hub
+docker login
+docker push msaid356/notebook:latest
+docker push msaid356/notebook:v1.0.0
+
+# Pull from Docker Hub
+docker pull msaid356/notebook:latest
 ```
+
+**Note**: The image is publicly available at `msaid356/notebook` on Docker Hub.
 
 ### Docker Compose Deployment
 

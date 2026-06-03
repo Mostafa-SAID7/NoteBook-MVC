@@ -31,11 +31,11 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '10.0.x'
     
     - name: Initialize Database
       run: |
-        psql -h localhost -U postgres -d notebook_db -f database.sql
+        psql -h localhost -U postgres -d notebook_db -f db/schema.sql
       env:
         PGPASSWORD: postgres
     
@@ -66,4 +66,6 @@ jobs:
       with:
         context: .
         push: false
-        tags: notebook:latest
+        tags: msaid356/notebook:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max

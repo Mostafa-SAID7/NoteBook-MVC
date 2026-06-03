@@ -1,223 +1,116 @@
 # Documentation Index
 
-Complete guide to NoteBook documentation files. Start here to find what you're looking for.
+Complete guide to NoteBook - streamlined and essential.
 
 ## 🚀 Quick Start
 
-**New to NoteBook?** Start here:
+1. **[README.md](../README.md)** - What is NoteBook?
+2. **[SETUP.md](../SETUP.md)** - Install and run (Docker or local)
+3. **[API.md](API.md)** - Test the API endpoints
 
-1. [README.md](../README.md) - Project overview and features
-2. [SETUP.md](../SETUP.md) - Get it running in 5 minutes
-3. [ARCHITECTURE.md](ARCHITECTURE.md) - Understand the codebase structure
+## 📚 Essential Documentation
 
-## 📚 Documentation by Role
+### Core Docs
 
-### For End Users / Testers
+| File | Purpose | Audience |
+|------|---------|----------|
+| [API.md](API.md) | API endpoints, examples, testing | Developers, DevOps |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Code structure, patterns | Developers |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment | DevOps |
+| [DEVELOPMENT.md](DEVELOPMENT.md) | Development workflow | Developers |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines | Contributors |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common issues & fixes | Everyone |
+| [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) | File organization | Everyone |
 
-- [README.md](../README.md) - What is NoteBook?
-- [SETUP.md](../SETUP.md) - How to install locally or with Docker
-- [docs/API.md](API.md) - API endpoints and examples
-- [docs/TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Fix common issues
-
-### For Developers
-
-- [docs/ARCHITECTURE.md](ARCHITECTURE.md) - Code structure and design patterns
-- [docs/DEVELOPMENT.md](DEVELOPMENT.md) - Development workflow and tools
-- [docs/CONTRIBUTING.md](CONTRIBUTING.md) - Coding standards and guidelines
-- [docs/TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Debug and fix problems
-- [API.md](API.md) - Test API endpoints
-
-### For DevOps / Operations
-
-- [SETUP.md](../SETUP.md) - Local installation
-- [docs/DEPLOYMENT.md](DEPLOYMENT.md) - Production deployment strategies
-- [docker-compose.yml](../docker-compose.yml) - Docker Compose configuration
-- [Dockerfile](../Dockerfile) - Docker image definition
-- [docs/TROUBLESHOOTING.md](TROUBLESHOOTING.md) - Operations issues
-
-### For Contributors
-
-- [docs/CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute
-- [docs/DEVELOPMENT.md](DEVELOPMENT.md) - Development setup and workflow
-- [docs/ARCHITECTURE.md](ARCHITECTURE.md) - Code structure to understand before coding
-- [SETUP.md](../SETUP.md) - Local development environment
-
-## 📖 Documentation Files
-
-### Root Level
+### Root Files
 
 | File | Purpose |
 |------|---------|
-| [README.md](../README.md) | Project overview & quick links |
-| [SETUP.md](../SETUP.md) | Installation (local + Docker) |
-| [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) | Delivery checklist |
+| [README.md](../README.md) | Project overview |
+| [SETUP.md](../SETUP.md) | Complete setup guide |
+| [CHANGELOG.md](../CHANGELOG.md) | Version history |
+| [LICENSE](../LICENSE) | MIT License |
 
-### Docs Folder
+## 🎯 By Use Case
 
-| File | Purpose |
-|------|---------|
-| [INDEX.md](INDEX.md) | Navigation hub |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Code structure & patterns |
-| [DOMAIN_LAYER.md](DOMAIN_LAYER.md) | Domain entities & value objects |
-| [API.md](API.md) | Endpoint documentation |
-| [HEALTH_CHECKS.md](HEALTH_CHECKS.md) | Health check endpoints & monitoring |
-| [RATE_LIMITING.md](RATE_LIMITING.md) | Rate limiting configuration & testing |
-| [PAGINATION.md](PAGINATION.md) | Pagination & sorting guide |
-| [DEVELOPMENT.md](DEVELOPMENT.md) | Development workflow |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
-| [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment |
-| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Common issues |
+### "I want to deploy this"
+→ [SETUP.md](../SETUP.md) → [DEPLOYMENT.md](DEPLOYMENT.md)
 
-### Database
+### "I want to develop features"
+→ [ARCHITECTURE.md](ARCHITECTURE.md) → [DEVELOPMENT.md](DEVELOPMENT.md)
 
-- [db/README.md](../db/README.md) - Database schema & operations
-- [db/schema.sql](../db/schema.sql) - Main schema
-- [db/migrations/](../db/migrations/) - Schema migrations
-- [db/seeds/](../db/seeds/) - Sample data
+### "I want to test the API"
+→ [API.md](API.md)
 
-## 🔍 Common Questions
+### "Something is broken"
+→ [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
-### "How do I get started?"
-→ Read [README.md](../README.md) then [SETUP.md](../SETUP.md)
+### "I want to contribute"
+→ [CONTRIBUTING.md](CONTRIBUTING.md)
 
-### "How does the code work?"
-→ Read [ARCHITECTURE.md](ARCHITECTURE.md)
-
-### "What is the domain model?"
-→ Read [DOMAIN_LAYER.md](DOMAIN_LAYER.md)
-
-### "How do I test the API?"
-→ Read [API.md](API.md)
-
-### "How do I monitor the API?"
-→ Read [HEALTH_CHECKS.md](HEALTH_CHECKS.md)
-
-### "How do I configure rate limiting?"
-→ Read [RATE_LIMITING.md](RATE_LIMITING.md)
-
-### "How do I use pagination?"
-→ Read [PAGINATION.md](PAGINATION.md)
-
-### "How do I deploy this?"
-→ Read [DEPLOYMENT.md](DEPLOYMENT.md)
-
-### "Something's broken, how do I fix it?"
-→ Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-
-### "How can I contribute?"
-→ Read [CONTRIBUTING.md](CONTRIBUTING.md)
-
-### "How do I setup the database?"
-→ Read [db/README.md](../db/README.md)
-
-## 🏗️ Architecture Quick Reference
+## 🏗️ Architecture Overview
 
 ```
-NoteBook Architecture
-├── Domain Layer (NoteBook.Domain)
-│   ├── Entities: Business models
-│   ├── Exceptions: Domain errors
-│   └── Repositories: Interface contracts
-├── Application Layer (NoteBook.Application)
-│   ├── CQRS: Commands and Queries
-│   ├── DTOs: Data transfer objects
-│   └── Handlers: Business logic
-├── Infrastructure Layer (NoteBook.Infrastructure)
-│   ├── Repositories: Data access implementations
-│   └── Database: Connection management
-└── Web Layer (NoteBook.Web)
-    ├── Controllers: API endpoints
-    └── Views: User interface
+NoteBook (Clean Architecture)
+├── Domain Layer        → Business entities & rules
+├── Application Layer   → CQRS commands & queries
+├── Infrastructure      → Database (Dapper + PostgreSQL)
+└── Web Layer          → ASP.NET Core API
 ```
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed explanation.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for details.
+
+## 🐳 Docker Quick Reference
+
+```bash
+# Pull and run from Docker Hub
+docker pull msaid356/notebook:latest
+docker-compose up -d
+
+# Build from source
+docker-compose -f docker-compose.build.yml up -d
+
+# Push to Docker Hub
+docker build -t msaid356/notebook:latest .
+docker push msaid356/notebook:latest
+```
+
+See [SETUP.md](../SETUP.md) for credentials and details.
 
 ## 🛠️ Common Commands
 
 ```bash
-# Setup
-git clone https://github.com/yourusername/NoteBook.git
-cd NoteBook
-
-# Local Development
-dotnet build
-cd NoteBook.Web && dotnet run
+# Local development
+dotnet run --project NoteBook.Web
 
 # Docker
-docker-compose up
+docker-compose up -d
+docker-compose logs -f
 
 # Database
-psql -U postgres -d notebook_db -f database.sql
+psql -U postgres -d notebook_db -f db/schema.sql
 
 # Testing
-dotnet test
+curl http://localhost:5000/health
 curl http://localhost:5000/api/notes
 ```
 
-See [DEVELOPMENT.md](DEVELOPMENT.md) for more commands.
+## 📝 Documentation Philosophy
 
-## 📝 Documentation Standards
+This documentation is **streamlined** - only essential files:
+- ✅ Clear and focused
+- ✅ No duplication
+- ✅ Easy to navigate
+- ✅ Practical examples
 
-All documentation follows these principles:
+## 🤝 Need Help?
 
-- **Clear**: Concise, avoid unnecessary jargon
-- **Complete**: Cover main scenarios
-- **Accessible**: Different skill levels
-- **Maintainable**: Easy to update
-- **DRY**: No duplication across files
-
-## 🔗 External Resources
-
-- [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/)
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-- [Dapper GitHub](https://github.com/DapperLib/Dapper)
-- [MediatR Documentation](https://jbogard.com/mediatr/)
-- [Docker Documentation](https://docs.docker.com/)
-
-## 📋 Document Versions
-
-| Document | Version | Last Updated |
-|----------|---------|--------------|
-| README.md | 1.0.0 | June 2026 |
-| SETUP.md | 1.0.0 | June 2026 |
-| ARCHITECTURE.md | 1.0.0 | June 2026 |
-| DOMAIN_LAYER.md | 2.0.0 | June 2026 |
-| API.md | 2.0.0 | June 2026 |
-| HEALTH_CHECKS.md | 1.0.0 | June 2026 |
-| PAGINATION.md | 1.0.0 | June 2026 |
-| DEVELOPMENT.md | 1.0.0 | June 2026 |
-| CONTRIBUTING.md | 1.0.0 | June 2026 |
-| DEPLOYMENT.md | 1.0.0 | June 2026 |
-| TROUBLESHOOTING.md | 1.0.0 | June 2026 |
-
-## 💡 Tips for Using Documentation
-
-1. **Use search** (Ctrl+F / Cmd+F) to find specific topics
-2. **Follow links** to related documents for deeper understanding
-3. **Check TROUBLESHOOTING.md** first if you encounter issues
-4. **Report gaps** - If something is missing, create an issue
-5. **Keep it updated** - Help keep docs current when you learn new things
-
-## 🤝 Contributing to Documentation
-
-Good documentation is crucial. When contributing:
-
-1. Use clear, concise language
-2. Include practical examples
-3. Link to related sections
-4. Update version numbers
-5. Test instructions before documenting
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
-## 📞 Getting Help
-
-- **Found a bug?** Create a GitHub Issue
-- **Have a question?** Check documentation first, then create Discussion
-- **Want to contribute?** See [CONTRIBUTING.md](CONTRIBUTING.md)
-- **Need support?** Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+1. Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md) first
+2. Review relevant documentation above
+3. Create GitHub issue if problem persists
 
 ---
 
-**Last Updated**: June 2026  
-**Documentation Version**: 1.0.0
+**Tech Stack:** ASP.NET Core 10, PostgreSQL 16, Docker  
+**Image:** msaid356/notebook  
+**Last Updated:** June 2026

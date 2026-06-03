@@ -26,7 +26,10 @@ public static class ApplicationBootstrap
         // 4. Add rate limiting
         RateLimitingConfiguration.AddRateLimiting(builder);
 
-        // 5. Register all services
+        // 5. Add Swagger/OpenAPI
+        SwaggerConfiguration.AddSwagger(builder);
+
+        // 6. Register all services
         ServiceRegistrationConfiguration.RegisterServices(builder);
     }
 
