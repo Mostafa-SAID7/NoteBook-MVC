@@ -1,0 +1,235 @@
+/**
+ * Advanced Components Styles
+ * Tooltips, spinners, progress bars, list groups, collapse, popovers
+ */
+
+/* ============= TOOLTIPS ============= */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: var(--color-black-95);
+  color: var(--text-inverse);
+  text-align: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  position: absolute;
+  z-index: var(--z-tooltip);
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  width: 120px;
+  font-size: var(--font-size-sm);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-black-95) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ============= SPINNERS/LOADERS ============= */
+
+.spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.spinner-border {
+  border: 3px solid var(--bg-secondary);
+  border-top: 3px solid var(--color-black-90);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-border.spinner-sm {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.spinner-border.spinner-lg {
+  width: 60px;
+  height: 60px;
+  border-width: 4px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============= PROGRESS BAR ============= */
+
+.progress {
+  height: 20px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--spacing-4);
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--color-info);
+  transition: width var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-inverse);
+  font-weight: var(--font-weight-semibold);
+}
+
+.progress-bar.success {
+  background-color: var(--color-success);
+}
+
+.progress-bar.danger {
+  background-color: var(--color-error);
+}
+
+.progress-bar.warning {
+  background-color: var(--color-warning);
+}
+
+/* ============= LIST GROUP ============= */
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+
+.list-group-item {
+  padding: var(--spacing-4);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+  transition: all var(--transition-fast);
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.list-group-item.active {
+  background-color: var(--color-black-90);
+  color: var(--text-inverse);
+  border-bottom-color: transparent;
+}
+
+.list-group-item-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ============= COLLAPSE ============= */
+
+.collapse {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--transition-base);
+}
+
+.collapse.show {
+  max-height: 1000px;
+}
+
+.collapse-header {
+  padding: var(--spacing-4);
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-radius: var(--radius-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.collapse-header:hover {
+  background-color: var(--color-gray-300);
+}
+
+.collapse-header::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform var(--transition-fast);
+}
+
+.collapse.show .collapse-header::after {
+  transform: rotate(45deg);
+}
+
+.collapse-body {
+  padding: var(--spacing-4);
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-top: none;
+  border-radius: 0 0 var(--radius-base) var(--radius-base);
+}
+
+/* ============= POPOVERS ============= */
+
+.popover {
+  position: absolute;
+  background-color: var(--bg-primary);
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
+  display: none;
+  min-width: 200px;
+}
+
+.popover.show {
+  display: block;
+}
+
+.popover-header {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+  font-weight: var(--font-weight-semibold);
+}
+
+.popover-body {
+  padding: var(--spacing-3) var(--spacing-4);
+}

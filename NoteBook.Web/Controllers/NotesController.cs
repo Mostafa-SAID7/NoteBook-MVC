@@ -37,14 +37,21 @@ public class NotesController : ControllerBase
     }
     
     /// <summary>
-    /// Get all notes for the current user
+    /// Get all notes for the current user (supports pagination)
     /// </summary>
+    /// <param name="pageNumber">Page number (1-based, optional)</param>
+    /// <param name="pageSize">Items per page (1-100, optional)</param>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<NoteDto>>> GetNotes(CancellationToken cancellationToken)
+    [ProducesResponseType(typeof(IEnumerable<NoteDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PaginatedResponse<NoteDto>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<object>> GetNotes(
+        [FromQuery] int? pageNumber = null,
+        [FromQuery] int? pageSize = null,
+        CancellationToken cancellationToken = default)
     {
         try
         {
-            var query = new GetUserNotesQuery(GetCurrentUserId());
+            var query = new GetUserNotesQuery(GetCurrentUserId(), pageNumber, pageSize);
             var notes = await _mediator.Send(query, cancellationToken);
             return Ok(notes);
         }

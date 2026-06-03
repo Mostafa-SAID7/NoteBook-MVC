@@ -1,31 +1,300 @@
-html {
-  font-size: 14px;
+/**
+ * Site Specific Styles - Layout and App-Specific Components
+ * Site-wide overrides and utilities
+ * Note: Duplicates removed - html, body, main styling is in base.css
+ */
+
+/* ============= LAYOUT CONTAINER ============= */
+
+.container {
+  width: 100%;
+  padding-right: var(--spacing-4);
+  padding-left: var(--spacing-4);
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
 }
 
-body {
-  margin-bottom: 60px;
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.container-fluid {
+  width: 100%;
+  padding-right: var(--spacing-4);
+  padding-left: var(--spacing-4);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ============= HEADER ============= */
+
+header {
+  background-color: var(--bg-primary);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+  box-shadow: var(--shadow-xs);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-dropdown);
+}
+
+/* ============= FOOTER ============= */
+
+footer {
+  margin-top: var(--spacing-12);
+  padding: var(--spacing-8) var(--spacing-4);
+  background-color: var(--bg-secondary);
+  border-top: var(--border-width-thin) solid var(--border-color-light);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+footer a {
+  color: var(--text-secondary);
+}
+
+footer a:hover {
+  color: var(--text-primary);
+}
+
+/* ============= GRID SYSTEM ============= */
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Column Classes */
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* Responsive Columns */
+@media (max-width: 992px) {
+  .col-lg-1 { grid-column: span 1; }
+  .col-lg-2 { grid-column: span 2; }
+  .col-lg-3 { grid-column: span 3; }
+  .col-lg-4 { grid-column: span 4; }
+  .col-lg-6 { grid-column: span 6; }
+  .col-lg-8 { grid-column: span 8; }
+  .col-lg-12 { grid-column: span 12; }
+}
+
+@media (max-width: 768px) {
+  .col-md-1 { grid-column: span 1; }
+  .col-md-2 { grid-column: span 2; }
+  .col-md-3 { grid-column: span 3; }
+  .col-md-4 { grid-column: span 4; }
+  .col-md-6 { grid-column: span 6; }
+  .col-md-8 { grid-column: span 8; }
+  .col-md-12 { grid-column: span 12; }
+}
+
+@media (max-width: 576px) {
+  .col-sm-1 { grid-column: span 1; }
+  .col-sm-2 { grid-column: span 2; }
+  .col-sm-3 { grid-column: span 3; }
+  .col-sm-4 { grid-column: span 4; }
+  .col-sm-6 { grid-column: span 6; }
+  .col-sm-12 { grid-column: span 12; }
+  
+  .row {
+    gap: var(--spacing-2);
+  }
+}
+
+/* ============= UTILITY CLASSES ============= */
+
+/* Margin */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--spacing-1); }
+.m-2 { margin: var(--spacing-2); }
+.m-3 { margin: var(--spacing-3); }
+.m-4 { margin: var(--spacing-4); }
+.m-6 { margin: var(--spacing-6); }
+.m-8 { margin: var(--spacing-8); }
+
+.mt-1 { margin-top: var(--spacing-1); }
+.mt-2 { margin-top: var(--spacing-2); }
+.mt-3 { margin-top: var(--spacing-3); }
+.mt-4 { margin-top: var(--spacing-4); }
+.mt-6 { margin-top: var(--spacing-6); }
+.mt-8 { margin-top: var(--spacing-8); }
+
+.mb-1 { margin-bottom: var(--spacing-1); }
+.mb-2 { margin-bottom: var(--spacing-2); }
+.mb-3 { margin-bottom: var(--spacing-3); }
+.mb-4 { margin-bottom: var(--spacing-4); }
+.mb-6 { margin-bottom: var(--spacing-6); }
+.mb-8 { margin-bottom: var(--spacing-8); }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+.my-auto { margin-top: auto; margin-bottom: auto; }
+
+/* Padding */
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-1); }
+.p-2 { padding: var(--spacing-2); }
+.p-3 { padding: var(--spacing-3); }
+.p-4 { padding: var(--spacing-4); }
+.p-6 { padding: var(--spacing-6); }
+.p-8 { padding: var(--spacing-8); }
+
+.pt-4 { padding-top: var(--spacing-4); }
+.pb-3 { padding-bottom: var(--spacing-3); }
+.pb-8 { padding-bottom: var(--spacing-8); }
+
+/* Display */
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-none { display: none; }
+
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-grow-1 { flex-grow: 1; }
+
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+
+.justify-content-between { justify-content: space-between; }
+.justify-content-center { justify-content: center; }
+.justify-content-start { justify-content: flex-start; }
+.justify-content-end { justify-content: flex-end; }
+
+/* Gap */
+.gap-1 { gap: var(--spacing-1); }
+.gap-2 { gap: var(--spacing-2); }
+.gap-3 { gap: var(--spacing-3); }
+.gap-4 { gap: var(--spacing-4); }
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-start { text-align: start; }
+.text-end { text-align: end; }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-white { color: var(--text-inverse); }
+.text-muted { color: var(--text-disabled); }
+
+.text-success { color: var(--color-success); }
+.text-danger { color: var(--color-error); }
+.text-warning { color: var(--color-warning); }
+.text-info { color: var(--color-info); }
+
+.fw-light { font-weight: var(--font-weight-light); }
+.fw-normal { font-weight: var(--font-weight-normal); }
+.fw-medium { font-weight: var(--font-weight-medium); }
+.fw-bold { font-weight: var(--font-weight-bold); }
+
+.fst-italic { font-style: italic; }
+
+/* Background Colors */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+
+.bg-white { background-color: var(--color-white); }
+.bg-dark { background-color: var(--color-black-90); }
+
+.bg-success { background-color: var(--color-success-light); }
+.bg-danger { background-color: var(--color-error-light); }
+.bg-warning { background-color: var(--color-warning-light); }
+.bg-info { background-color: var(--color-info-light); }
+
+/* Border Utilities */
+.border { border: var(--border-width-thin) solid var(--border-color-light); }
+.border-top { border-top: var(--border-width-thin) solid var(--border-color-light); }
+.border-bottom { border-bottom: var(--border-width-thin) solid var(--border-color-light); }
+.border-start { border-left: var(--border-width-thin) solid var(--border-color-light); }
+.border-end { border-right: var(--border-width-thin) solid var(--border-color-light); }
+
+.border-0 { border: none; }
+
+/* Opacity */
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============= PRINT STYLES ============= */
+
+@media print {
+  body {
+    margin-bottom: 0;
+  }
+
+  header, footer {
+    display: none;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: "";
+  }
+
+  .no-print {
+    display: none;
+  }
 }

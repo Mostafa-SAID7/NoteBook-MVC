@@ -56,7 +56,8 @@ public class GetUserNotesQueryHandlerTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(2, result.Count());
+        var resultList = Assert.IsAssignableFrom<IEnumerable<NoteDto>>(result);
+        Assert.Equal(2, resultList.Count());
         _mockRepository.Verify(x => x.GetUserNotesAsync(userId, It.IsAny<CancellationToken>()), Times.Once);
     }
 
@@ -80,6 +81,43 @@ public class GetUserNotesQueryHandlerTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Empty(result);
+        var resultList = Assert.IsAssignableFrom<IEnumerable<NoteDto>>(result);
+        Assert.Empty(resultList);
+    }
+
+    [Fact]
+    public async Task Handle_WithPagination_ReturnsPaginatedResponse()
+    {
+        // Arrange
+        var userId = Guid.NewGuid();
+        var query = new GetUserNotesQuery(userId, 1, 10);
+
+        var notes = new List<Note>
+        {
+            new Note { Id = Guid.NewGuid(), Title = "Note 1", Content = "Content 1", UserId = userId }
+        };
+
+        var noteDtos = new List<NoteDto>
+        {
+            new NoteDto { Id = notes[0].Id, Title = notes[0].Title, Content = notes[0].Content, UserId = userId }
+        };
+
+        _mockRepository
+            .Setup(x => x.GetUserNotesPagedAsync(userId, 1, 10, It.IsAny<CancellationToken>()))
+            .ReturnsAsync((notes, 1));
+
+        _mockMapper
+            .Setup(x => x.Map<IEnumerable<NoteDto>>(notes))
+            .Returns(noteDtos);
+
+        // Act
+        var result = await _handler.Handle(query, CancellationToken.None);
+
+        // Assert
+        Assert.NotNull(result);
+        var paginatedResponse = Assert.IsType<PaginatedResponse<NoteDto>>(result);
+        Assert.Equal(1, paginatedResponse.PageNumber);
+        Assert.Equal(10, paginatedResponse.PageSize);
+        Assert.Equal(1, paginatedResponse.TotalItems);
     }
 }

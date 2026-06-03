@@ -1,0 +1,446 @@
+/**
+ * Icons Styling & Utilities
+ * Professional icon utilities for Font Awesome
+ */
+
+/* ============= BASE ICON STYLES ============= */
+
+.icon,
+i.fa,
+i.fas,
+i.far,
+i.fab {
+  display: inline-block;
+  vertical-align: middle;
+  transition: color var(--transition-fast);
+}
+
+/* Icon sizing */
+.icon-xs,
+.fa-xs {
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+}
+
+.icon-sm,
+.fa-sm {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+}
+
+.icon,
+.icon-md,
+.fa {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+
+.icon-lg,
+.fa-lg {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+}
+
+.icon-xl,
+.fa-xl {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}
+
+.icon-2xl {
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+}
+
+/* ============= ICON COLORS ============= */
+
+.icon-primary,
+.fa-primary {
+  color: var(--text-primary);
+}
+
+.icon-secondary,
+.fa-secondary {
+  color: var(--text-secondary);
+}
+
+.icon-muted,
+.fa-muted {
+  color: var(--text-tertiary);
+}
+
+.icon-success,
+.fa-success {
+  color: var(--color-success);
+}
+
+.icon-danger,
+.fa-danger {
+  color: var(--color-error);
+}
+
+.icon-warning,
+.fa-warning {
+  color: var(--color-warning);
+}
+
+.icon-info,
+.fa-info {
+  color: var(--color-info);
+}
+
+.icon-white,
+.fa-white {
+  color: var(--text-inverse);
+}
+
+/* ============= ICON ANIMATIONS ============= */
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes icon-flip {
+  from {
+    transform: perspective(400px) rotateY(0);
+  }
+  to {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+.icon-spin,
+.fa-spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+.icon-pulse,
+.fa-pulse {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
+
+.icon-bounce,
+.fa-bounce {
+  animation: icon-bounce 1s ease-in-out infinite;
+}
+
+.icon-flip,
+.fa-flip {
+  animation: icon-flip 1s ease-in-out infinite;
+}
+
+/* ============= ICON WITH TEXT ============= */
+
+.icon-with-text,
+.fa-with-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  line-height: 1;
+}
+
+.icon-with-text-sm,
+.fa-with-text-sm {
+  gap: var(--spacing-1);
+}
+
+.icon-with-text-lg,
+.fa-with-text-lg {
+  gap: var(--spacing-3);
+}
+
+/* ============= ICON IN BUTTONS ============= */
+
+.btn i,
+.btn .icon,
+.btn .fa {
+  margin-right: var(--spacing-2);
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.btn i:last-child,
+.btn .icon:last-child,
+.btn .fa:last-child {
+  margin-right: 0;
+  margin-left: var(--spacing-2);
+}
+
+.btn-sm i,
+.btn-sm .icon,
+.btn-sm .fa {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+
+.btn-lg i,
+.btn-lg .icon,
+.btn-lg .fa {
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+}
+
+/* ============= ICON IN BADGES ============= */
+
+.badge i,
+.badge .icon,
+.badge .fa {
+  width: 14px;
+  height: 14px;
+  font-size: 12px;
+  margin-right: var(--spacing-1);
+  vertical-align: middle;
+}
+
+/* ============= ICON IN ALERTS ============= */
+
+.alert i,
+.alert .icon,
+.alert .fa {
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  margin-right: var(--spacing-3);
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+/* ============= ICON IN FORMS ============= */
+
+.form-group i,
+.form-group .icon,
+.form-group .fa {
+  position: absolute;
+  right: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+}
+
+/* ============= ICON IN NAVIGATION ============= */
+
+.nav-link i,
+.nav-link .icon,
+.nav-link .fa {
+  margin-right: var(--spacing-2);
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  font-size: 16px;
+}
+
+/* ============= ICON HOVER EFFECTS ============= */
+
+.icon-hover,
+.fa-hover {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.icon-hover:hover,
+.fa-hover:hover {
+  transform: scale(1.1);
+}
+
+.icon-hover:active,
+.fa-hover:active {
+  transform: scale(0.95);
+}
+
+/* ============= ICON BUTTON ============= */
+
+.icon-btn,
+.btn-icon {
+  background: none;
+  border: none;
+  padding: var(--spacing-2);
+  cursor: pointer;
+  border-radius: var(--radius-base);
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-btn:hover,
+.btn-icon:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.icon-btn:focus,
+.btn-icon:focus {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.icon-btn-sm,
+.btn-icon-sm {
+  padding: var(--spacing-1);
+  width: 32px;
+  height: 32px;
+}
+
+.icon-btn-lg,
+.btn-icon-lg {
+  padding: var(--spacing-3);
+  width: 48px;
+  height: 48px;
+}
+
+.icon-btn-primary,
+.btn-icon-primary {
+  color: var(--text-inverse);
+  background-color: var(--color-black-90);
+}
+
+.icon-btn-primary:hover,
+.btn-icon-primary:hover {
+  background-color: var(--color-black);
+}
+
+.icon-btn-danger,
+.btn-icon-danger {
+  color: var(--color-error);
+}
+
+.icon-btn-danger:hover,
+.btn-icon-danger:hover {
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.icon-btn-success,
+.btn-icon-success {
+  color: var(--color-success);
+}
+
+.icon-btn-success:hover,
+.btn-icon-success:hover {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+/* ============= ICON SPACING UTILITIES ============= */
+
+.icon-mr-1,
+.fa-mr-1 {
+  margin-right: var(--spacing-1);
+}
+
+.icon-mr-2,
+.fa-mr-2 {
+  margin-right: var(--spacing-2);
+}
+
+.icon-ml-1,
+.fa-ml-1 {
+  margin-left: var(--spacing-1);
+}
+
+.icon-ml-2,
+.fa-ml-2 {
+  margin-left: var(--spacing-2);
+}
+
+.icon-mx-1,
+.fa-mx-1 {
+  margin-right: var(--spacing-1);
+  margin-left: var(--spacing-1);
+}
+
+.icon-mx-2,
+.fa-mx-2 {
+  margin-right: var(--spacing-2);
+  margin-left: var(--spacing-2);
+}
+
+/* ============= RESPONSIVE ICON SIZING ============= */
+
+@media (max-width: 768px) {
+  .icon,
+  .icon-md,
+  .fa {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+
+  .icon-lg,
+  .fa-lg {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+  }
+
+  .btn i,
+  .btn .icon,
+  .btn .fa {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
+}
+
+/* ============= ICON TRANSITIONS ============= */
+
+.icon-transition,
+.fa-transition {
+  transition: all var(--transition-fast);
+}
+
+/* ============= ICON OPACITY STATES ============= */
+
+.icon-disabled,
+.fa-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon-light,
+.fa-light {
+  opacity: 0.75;
+}
+
+.icon-darker,
+.fa-darker {
+  opacity: 1;
+}

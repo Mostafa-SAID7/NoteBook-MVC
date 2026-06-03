@@ -2,7 +2,7 @@
 
 A production-grade note-taking application with clean architecture, PostgreSQL, and Dapper.
 
-**Status**: ✅ Production-Ready | **Version**: 1.0.0 | **Framework**: ASP.NET Core 9
+**Status**: ✅ Production-Ready | **Version**: 2.1.0 | **Framework**: ASP.NET Core 9 | **Phase**: 5 (Rate Limiting Recommended)
 
 ## 🚀 Quick Start
 
@@ -31,9 +31,15 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 | Document | Purpose |
 |----------|---------|
 | [SETUP.md](SETUP.md) | Installation & setup guide |
+| [ADVANCED_FEATURES_REVIEW.md](ADVANCED_FEATURES_REVIEW.md) | Rate limiting & caching review |
+| [ADVANCED_FEATURES_STATUS.md](ADVANCED_FEATURES_STATUS.md) | Current feature status |
+| [DOMAIN_ENHANCEMENTS.md](DOMAIN_ENHANCEMENTS.md) | Domain layer improvements |
 | [docs/INDEX.md](docs/INDEX.md) | Documentation navigation |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Code structure & patterns |
+| [docs/DOMAIN_LAYER.md](docs/DOMAIN_LAYER.md) | Domain entities & patterns |
 | [docs/API.md](docs/API.md) | API endpoints & examples |
+| [docs/HEALTH_CHECKS.md](docs/HEALTH_CHECKS.md) | Health check endpoints |
+| [docs/PAGINATION.md](docs/PAGINATION.md) | Pagination guide |
 | [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) | Development workflow |
 | [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) | Contribution guidelines |
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Production deployment |
@@ -41,12 +47,27 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 
 ## ✨ Features
 
+### Phase 1-4 (Complete)
 - ✅ Create, read, update, delete notes (with soft delete)
 - ✅ Archive & restore notes
 - ✅ Full-text search (title, content, tags)
 - ✅ Tag-based categorization
 - ✅ Pagination support
 - ✅ RESTful API
+- ✅ JWT authentication
+- ✅ Input validation (FluentValidation)
+- ✅ Unit testing (xUnit)
+- ✅ Health checks (`/api/health`)
+
+### Phase 5 (Recommended)
+- ⏳ Rate limiting (protection against abuse)
+- 📚 See [ADVANCED_FEATURES_REVIEW.md](ADVANCED_FEATURES_REVIEW.md)
+
+### Phase 6+ (Optional)
+- ⏳ Redis caching (performance)
+- 🎯 User collaboration (sharing, comments)
+- 🎯 File attachments
+- 🎯 Activity logging
 
 ## 🛠 Tech Stack
 

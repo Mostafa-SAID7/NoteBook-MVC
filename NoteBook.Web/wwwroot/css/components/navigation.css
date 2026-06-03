@@ -1,0 +1,154 @@
+/**
+ * Navigation Component Styles
+ * Navigation bars, breadcrumbs, pagination, tabs
+ */
+
+/* ============= NAVIGATION BAR ============= */
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-2);
+}
+
+.nav-item {
+  display: flex;
+}
+
+.nav-link {
+  padding: var(--spacing-3) var(--spacing-4);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-base);
+}
+
+.nav-link:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.nav-link.active {
+  background-color: var(--color-black-90);
+  color: var(--text-inverse);
+}
+
+/* ============= PAGINATION ============= */
+
+.pagination {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+}
+
+.page-item {
+  display: flex;
+}
+
+.page-link {
+  padding: var(--spacing-2) var(--spacing-4);
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.page-link:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-primary);
+}
+
+.page-item.active .page-link {
+  background-color: var(--color-black-90);
+  border-color: var(--color-black-90);
+  color: var(--text-inverse);
+}
+
+.page-item.disabled .page-link {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+/* ============= BREADCRUMB ============= */
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  padding: 0;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  padding: 0 var(--spacing-2);
+  color: var(--text-tertiary);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-primary);
+}
+
+.breadcrumb-item a {
+  color: var(--color-info);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+/* ============= TABS ============= */
+
+.tab-group {
+  margin-bottom: var(--spacing-6);
+}
+
+.tab-list {
+  display: flex;
+  list-style: none;
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+  gap: var(--spacing-4);
+}
+
+.tab-item {
+  margin-bottom: 0;
+}
+
+.tab-link {
+  display: block;
+  padding: var(--spacing-4);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: var(--font-weight-medium);
+}
+
+.tab-link:hover {
+  color: var(--text-primary);
+}
+
+.tab-link.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--color-info);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn var(--transition-fast);
+}

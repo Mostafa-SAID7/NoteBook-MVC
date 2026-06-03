@@ -1,0 +1,146 @@
+/**
+ * Form Component Styles
+ * Input fields, selects, checkboxes, radios, validation states
+ */
+
+.form-group {
+  margin-bottom: var(--spacing-6);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+label.required::after {
+  content: " *";
+  color: var(--color-error);
+}
+
+.form-control,
+.form-select,
+textarea {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-radius: var(--radius-base);
+  transition: all var(--transition-fast);
+  appearance: none;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-info);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.form-control:disabled,
+.form-select:disabled,
+textarea:disabled {
+  background-color: var(--bg-secondary);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.form-select {
+  padding-right: var(--spacing-10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%231a1a1a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  background-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Checkbox and Radio */
+.form-check {
+  margin-bottom: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  border: var(--border-width-thin) solid var(--border-color-medium);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+}
+
+.form-check-input:hover {
+  border-color: var(--text-primary);
+}
+
+.form-check-input:checked {
+  background-color: var(--color-info);
+  border-color: var(--color-info);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13.5 2.5L6 10l-3.5-3.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-check-input:focus {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.form-check-label {
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Form Validation */
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--color-error);
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: var(--color-success);
+}
+
+.form-control.is-valid:focus,
+.form-select.is-valid:focus {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.invalid-feedback,
+.valid-feedback {
+  display: block;
+  margin-top: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.invalid-feedback {
+  color: var(--color-error);
+}
+
+.valid-feedback {
+  color: var(--color-success);
+}

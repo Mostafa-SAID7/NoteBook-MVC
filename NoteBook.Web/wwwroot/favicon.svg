@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Background -->
+  <rect width="256" height="256" fill="#1a1a1a" rx="30"/>
+  
+  <!-- Notebook pages -->
+  <g transform="translate(60, 40)">
+    <!-- Back page -->
+    <rect x="15" y="20" width="90" height="130" fill="none" stroke="#757575" stroke-width="6" rx="6"/>
+    
+    <!-- Middle page -->
+    <rect x="8" y="12" width="90" height="130" fill="none" stroke="#9e9e9e" stroke-width="6" rx="6"/>
+    
+    <!-- Front page -->
+    <rect x="0" y="0" width="90" height="130" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="6" rx="6"/>
+    
+    <!-- Lines on front page (representing text) -->
+    <line x1="12" y1="20" x2="78" y2="20" stroke="#bdbdbd" stroke-width="3" stroke-linecap="round"/>
+    <line x1="12" y1="35" x2="78" y2="35" stroke="#bdbdbd" stroke-width="3" stroke-linecap="round"/>
+    <line x1="12" y1="50" x2="78" y2="50" stroke="#bdbdbd" stroke-width="3" stroke-linecap="round"/>
+    <line x1="12" y1="65" x2="65" y2="65" stroke="#bdbdbd" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Pen/pencil accent -->
+    <circle cx="70" cy="85" r="8" fill="#2196f3"/>
+  </g>
+  
+  <!-- Document indicator -->
+  <g transform="translate(130, 100)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#f5f5f5" stroke-width="3" opacity="0.3"/>
+  </g>
+</svg>

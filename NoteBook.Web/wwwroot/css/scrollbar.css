@@ -1,0 +1,137 @@
+/**
+ * Scrollbar Styling
+ * Professional scrollbar styles for all browsers
+ */
+
+/* ============= WEBKIT SCROLLBARS (Chrome, Safari, Edge) ============= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-400);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gray-500);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-gray-600);
+}
+
+/* ============= FIREFOX SCROLLBARS ============= */
+
+* {
+  scrollbar-color: var(--color-gray-400) var(--bg-primary);
+  scrollbar-width: thin;
+}
+
+/* ============= SCROLLBAR VARIANTS ============= */
+
+/* Large scrollbars for specific areas */
+.scrollbar-lg::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.scrollbar-lg::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-500);
+}
+
+.scrollbar-lg {
+  scrollbar-width: thick;
+}
+
+/* Thin scrollbars for compact areas */
+.scrollbar-sm::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-sm::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-500);
+}
+
+.scrollbar-sm {
+  scrollbar-width: thin;
+}
+
+/* Dark scrollbars for light backgrounds */
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gray-700);
+}
+
+.scrollbar-dark {
+  scrollbar-color: var(--color-gray-600) var(--bg-primary);
+}
+
+/* Light scrollbars for dark backgrounds */
+.scrollbar-light::-webkit-scrollbar-track {
+  background-color: var(--color-gray-200);
+}
+
+.scrollbar-light::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+}
+
+.scrollbar-light {
+  scrollbar-color: var(--color-gray-100) var(--color-gray-200);
+}
+
+/* Colored scrollbars */
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  background-color: var(--color-info);
+}
+
+.scrollbar-primary {
+  scrollbar-color: var(--color-info) var(--bg-primary);
+}
+
+.scrollbar-success::-webkit-scrollbar-thumb {
+  background-color: var(--color-success);
+}
+
+.scrollbar-success {
+  scrollbar-color: var(--color-success) var(--bg-primary);
+}
+
+.scrollbar-danger::-webkit-scrollbar-thumb {
+  background-color: var(--color-error);
+}
+
+.scrollbar-danger {
+  scrollbar-color: var(--color-error) var(--bg-primary);
+}
+
+/* ============= SMOOTH SCROLLING ============= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Disable smooth scroll for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============= SCROLLBAR ANIMATIONS ============= */
+
+::-webkit-scrollbar-thumb {
+  transition: background-color var(--transition-fast);
+}

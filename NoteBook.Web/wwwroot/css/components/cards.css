@@ -1,0 +1,44 @@
+/**
+ * Card Component Styles
+ * Container for grouped content with header, body, and footer
+ */
+
+.card {
+  background-color: var(--bg-primary);
+  border: var(--border-width-thin) solid var(--border-color-light);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  padding: var(--spacing-4) var(--spacing-6);
+  background-color: var(--bg-secondary);
+  border-bottom: var(--border-width-thin) solid var(--border-color-light);
+}
+
+.card-body {
+  padding: var(--spacing-6);
+}
+
+.card-footer {
+  padding: var(--spacing-4) var(--spacing-6);
+  background-color: var(--bg-secondary);
+  border-top: var(--border-width-thin) solid var(--border-color-light);
+}
+
+.card-title {
+  margin: 0 0 var(--spacing-2) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card-text {
+  margin: 0 0 var(--spacing-4) 0;
+  color: var(--text-secondary);
+}

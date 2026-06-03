@@ -58,7 +58,11 @@ Complete guide to NoteBook documentation files. Start here to find what you're l
 |------|---------|
 | [INDEX.md](INDEX.md) | Navigation hub |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Code structure & patterns |
+| [DOMAIN_LAYER.md](DOMAIN_LAYER.md) | Domain entities & value objects |
 | [API.md](API.md) | Endpoint documentation |
+| [HEALTH_CHECKS.md](HEALTH_CHECKS.md) | Health check endpoints & monitoring |
+| [RATE_LIMITING.md](RATE_LIMITING.md) | Rate limiting configuration & testing |
+| [PAGINATION.md](PAGINATION.md) | Pagination & sorting guide |
 | [DEVELOPMENT.md](DEVELOPMENT.md) | Development workflow |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
 | [DEPLOYMENT.md](DEPLOYMENT.md) | Production deployment |
@@ -79,8 +83,20 @@ Complete guide to NoteBook documentation files. Start here to find what you're l
 ### "How does the code work?"
 → Read [ARCHITECTURE.md](ARCHITECTURE.md)
 
+### "What is the domain model?"
+→ Read [DOMAIN_LAYER.md](DOMAIN_LAYER.md)
+
 ### "How do I test the API?"
 → Read [API.md](API.md)
+
+### "How do I monitor the API?"
+→ Read [HEALTH_CHECKS.md](HEALTH_CHECKS.md)
+
+### "How do I configure rate limiting?"
+→ Read [RATE_LIMITING.md](RATE_LIMITING.md)
+
+### "How do I use pagination?"
+→ Read [PAGINATION.md](PAGINATION.md)
 
 ### "How do I deploy this?"
 → Read [DEPLOYMENT.md](DEPLOYMENT.md)
@@ -165,7 +181,10 @@ All documentation follows these principles:
 | README.md | 1.0.0 | June 2026 |
 | SETUP.md | 1.0.0 | June 2026 |
 | ARCHITECTURE.md | 1.0.0 | June 2026 |
-| API.md | 1.0.0 | June 2026 |
+| DOMAIN_LAYER.md | 2.0.0 | June 2026 |
+| API.md | 2.0.0 | June 2026 |
+| HEALTH_CHECKS.md | 1.0.0 | June 2026 |
+| PAGINATION.md | 1.0.0 | June 2026 |
 | DEVELOPMENT.md | 1.0.0 | June 2026 |
 | CONTRIBUTING.md | 1.0.0 | June 2026 |
 | DEPLOYMENT.md | 1.0.0 | June 2026 |
