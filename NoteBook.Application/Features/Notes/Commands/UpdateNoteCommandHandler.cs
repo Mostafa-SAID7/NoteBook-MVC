@@ -1,27 +1,38 @@
 namespace NoteBook.Application.Features.Notes.Commands;
 
 using AutoMapper;
+using FluentValidation;
 using MediatR;
 using NoteBook.Application.DTOs;
 using NoteBook.Domain.Exceptions;
 using NoteBook.Domain.Repositories;
 
 /// <summary>
-/// Handler for updating an existing note
+/// Handler for updating an existing note with validation
 /// </summary>
 public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand, NoteDto>
 {
     private readonly INoteRepository _noteRepository;
     private readonly IMapper _mapper;
+    private readonly IValidator<UpdateNoteCommand> _validator;
     
-    public UpdateNoteCommandHandler(INoteRepository noteRepository, IMapper mapper)
+    public UpdateNoteCommandHandler(
+        INoteRepository noteRepository, 
+        IMapper mapper,
+        IValidator<UpdateNoteCommand> validator)
     {
         _noteRepository = noteRepository;
         _mapper = mapper;
+        _validator = validator;
     }
     
     public async Task<NoteDto> Handle(UpdateNoteCommand request, CancellationToken cancellationToken)
     {
+        // Validate request
+        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+        if (!validationResult.IsValid)
+            throw new ValidationException(validationResult.Errors);
+        
         var note = await _noteRepository.GetByIdAsync(request.NoteId, cancellationToken);
         
         if (note is null)

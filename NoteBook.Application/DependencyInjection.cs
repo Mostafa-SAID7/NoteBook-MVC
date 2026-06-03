@@ -2,6 +2,7 @@ namespace NoteBook.Application;
 
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
+using FluentValidation;
 using MediatR;
 using NoteBook.Application.Mapping;
 
@@ -14,6 +15,9 @@ public static class DependencyInjection
     {
         // AutoMapper
         services.AddAutoMapper(cfg => cfg.AddMaps(typeof(MappingProfile).Assembly));
+        
+        // FluentValidation
+        services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
         
         // MediatR
         services.AddMediatR(config => 

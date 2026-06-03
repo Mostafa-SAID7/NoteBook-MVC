@@ -1,28 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using MediatR;
 using NoteBook.Application.DTOs;
 using NoteBook.Application.Features.Notes.Commands;
 using NoteBook.Application.Features.Notes.Queries;
+using System.Security.Claims;
 
 namespace NoteBook.Web.Controllers;
 
 /// <summary>
-/// Controller for managing notes
+/// Controller for managing notes (requires authentication)
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class NotesController : ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly ILogger<NotesController> _logger;
     
-    // TODO: Replace with actual user ID from claims when authentication is implemented
-    private static readonly Guid DefaultUserId = Guid.Parse("00000000-0000-0000-0000-000000000001");
-    
     public NotesController(IMediator mediator, ILogger<NotesController> logger)
     {
         _mediator = mediator;
         _logger = logger;
+    }
+
+    /// <summary>
+    /// Get current user ID from JWT claims
+    /// </summary>
+    private Guid GetCurrentUserId()
+    {
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        return userIdClaim != null && Guid.TryParse(userIdClaim.Value, out var userId) 
+            ? userId 
+            : Guid.Empty;
     }
     
     /// <summary>
@@ -33,7 +44,7 @@ public class NotesController : ControllerBase
     {
         try
         {
-            var query = new GetUserNotesQuery(DefaultUserId);
+            var query = new GetUserNotesQuery(GetCurrentUserId());
             var notes = await _mediator.Send(query, cancellationToken);
             return Ok(notes);
         }
@@ -78,7 +89,7 @@ public class NotesController : ControllerBase
         try
         {
             var command = new CreateNoteCommand(
-                DefaultUserId,
+                GetCurrentUserId(),
                 request.Title,
                 request.Content,
                 request.Tags);
@@ -106,7 +117,7 @@ public class NotesController : ControllerBase
         {
             var command = new UpdateNoteCommand(
                 id,
-                DefaultUserId,
+                GetCurrentUserId(),
                 request.Title,
                 request.Content,
                 request.Tags);
@@ -129,7 +140,7 @@ public class NotesController : ControllerBase
     {
         try
         {
-            var command = new DeleteNoteCommand(id, DefaultUserId);
+            var command = new DeleteNoteCommand(id, GetCurrentUserId());
             var result = await _mediator.Send(command, cancellationToken);
             
             if (!result)
@@ -157,7 +168,7 @@ public class NotesController : ControllerBase
             if (string.IsNullOrWhiteSpace(term))
                 return BadRequest("Search term cannot be empty");
             
-            var query = new SearchNotesQuery(DefaultUserId, term);
+            var query = new SearchNotesQuery(GetCurrentUserId(), term);
             var results = await _mediator.Send(query, cancellationToken);
             return Ok(results);
         }
