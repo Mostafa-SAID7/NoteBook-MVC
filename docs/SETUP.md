@@ -61,7 +61,7 @@ cd NoteBook
 
 3. **Initialize schema:**
    ```bash
-   psql -U notebook_user -d notebook_db -f database.sql
+   psql -U notebook_user -d notebook_db -f db/schema.sql
    ```
 
 #### Option B: Using Docker (Without Full Docker Compose)
@@ -75,8 +75,8 @@ docker run --name notebook_postgres \
   -d postgres:16-alpine
 
 # Initialize schema
-docker cp database.sql notebook_postgres:/tmp/
-docker exec notebook_postgres psql -U postgres -d notebook_db -f /tmp/database.sql
+docker cp db/schema.sql notebook_postgres:/tmp/
+docker exec notebook_postgres psql -U postgres -d notebook_db -f /tmp/schema.sql
 ```
 
 ### Step 3: Configure Application

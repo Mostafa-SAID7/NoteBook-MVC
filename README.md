@@ -89,7 +89,7 @@ NoteBook.Web/            # ASP.NET Core presentation layer
 3. **Create the database and schema**
    ```bash
    # Using psql
-   psql -U postgres -f database.sql
+   psql -U postgres -f db/schema.sql
    
    # Or execute the SQL script in your database client
    ```
@@ -201,7 +201,10 @@ NoteBook/
 ├── NoteBook.Application/         # Application layer (commands, queries, handlers)
 ├── NoteBook.Infrastructure/      # Infrastructure layer (repositories, data access)
 ├── NoteBook.Web/                 # Web layer (controllers, views)
-├── database.sql                  # Database schema initialization script
+├── db/                           # Database files
+│   ├── schema.sql               # Database schema initialization
+│   ├── migrations/              # Schema migrations
+│   └── seeds/                   # Sample data
 ├── Dockerfile                    # Docker image definition
 ├── docker-compose.yml            # Docker Compose configuration
 ├── .dockerignore                 # Docker build exclusions
@@ -235,7 +238,7 @@ ASPNETCORE_ENVIRONMENT=Development
 
 ### Database Migrations
 
-Currently, the database schema is initialized via `database.sql`. For future changes:
+Currently, the database schema is initialized via `db/schema.sql`. For future changes:
 
 1. Update the SQL script
 2. Run migrations manually or create a migration runner
