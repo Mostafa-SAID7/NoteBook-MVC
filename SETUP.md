@@ -45,7 +45,7 @@ docker-compose down
 ## 💻 Local Development
 
 ### Prerequisites
-- .NET 10 SDK: https://dotnet.microsoft.com/download
+- .NET 9 SDK: https://dotnet.microsoft.com/download
 - PostgreSQL 16: https://www.postgresql.org/download/
 
 ### Steps

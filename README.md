@@ -2,7 +2,7 @@
 
 A production-grade note-taking application with clean architecture, PostgreSQL, and Dapper.
 
-**Status**: ✅ Production-Ready | **Version**: 2.1.0 | **Framework**: ASP.NET Core 10 | **Phase**: 5 (Rate Limiting Recommended)
+**Status**: ✅ Production-Ready | **Version**: 2.1.0 | **Framework**: ASP.NET Core 9 | **Phase**: 5 (Rate Limiting Recommended)
 
 ## 🚀 Quick Start
 
@@ -70,7 +70,7 @@ See [SETUP.md](SETUP.md) for detailed setup instructions.
 
 ## 🛠 Tech Stack
 
-- **Backend**: ASP.NET Core 10.0
+- **Backend**: ASP.NET Core 9.0
 - **Database**: PostgreSQL 16
 - **Data Access**: Dapper + Npgsql
 - **Architecture**: Clean Architecture + CQRS
@@ -116,7 +116,7 @@ Full documentation: [docs/API.md](docs/API.md)
 
 ## 📋 Requirements
 
-- .NET 10 SDK
+- .NET 9 SDK
 - PostgreSQL 16 (or Docker)
 - Docker & Docker Compose (optional, but recommended)
 
