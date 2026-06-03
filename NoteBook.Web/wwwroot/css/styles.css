@@ -39,6 +39,7 @@
 @import url('./components/modals.css');
 @import url('./components/dropdowns.css');
 @import url('./components/advanced.css');
+@import url('./components/error-page.css');
 
 /* 6. Utilities */
 @import url('./utilities.css');

@@ -14,4 +14,13 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    /// <summary>
+    /// Privacy action - displays the privacy policy
+    /// </summary>
+    public IActionResult Privacy()
+    {
+        ViewData["PageTitle"] = "Privacy Policy";
+        return View();
+    }
 }

@@ -3,44 +3,75 @@
     ViewData["Title"] = "Error";
 }
 
-<div class="d-flex flex-column align-items-center gap-6 py-12 min-h-screen justify-content-center">
-    <div class="text-center">
-        <h1 class="text-3xl font-bold text-primary mb-3">Error.</h1>
-        <h2 class="text-xl text-secondary mb-6">An error occurred while processing your request.</h2>
+<div class="error-page-container">
+    <!-- Animated Background Elements -->
+    <div class="error-background">
+        <div class="error-circle error-circle-1"></div>
+        <div class="error-circle error-circle-2"></div>
+        <div class="error-circle error-circle-3"></div>
+    </div>
 
-        @if (Model.ShowRequestId)
-        {
-            <p class="text-sm mb-6">
-                <strong>Request ID:</strong> 
-                <code class="bg-gray-100 px-2 py-1 rounded" style="font-family: monospace;">@Model.RequestId</code>
-            </p>
-        }
+    <!-- Error Content -->
+    <div class="error-content d-flex flex-column align-items-center gap-6 py-12 min-h-screen justify-content-center">
+        <div class="text-center error-inner">
+            <!-- Error Icon with Animation -->
+            <div class="error-icon-wrapper">
+                <i class="fas fa-exclamation-triangle error-icon"></i>
+            </div>
 
-        <div class="bg-gray-100 p-6 rounded mb-6 text-left max-w-600">
-            <h3 class="font-bold mb-3">Development Mode Information</h3>
-            <p class="text-sm text-secondary mb-3">
-                Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-            </p>
-            <p class="text-sm text-secondary mb-3">
-                <strong>Note:</strong> The Development environment shouldn't be enabled for deployed applications as it can result in displaying sensitive information from exceptions to end users.
-            </p>
-            <p class="text-sm text-secondary">
-                For local debugging, set the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong> and restart the app.
-            </p>
-        </div>
+            <!-- Error Title -->
+            <h1 class="text-3xl font-bold text-primary error-title">Oops!</h1>
+            <p class="text-lg text-secondary error-subtitle">Something went wrong</p>
 
-        <div class="d-flex gap-4 justify-content-center">
-            <a href="/" class="px-4 py-2 bg-black text-white rounded cursor-pointer" style="text-decoration: none;">
-                ← Back to Home
-            </a>
+            <!-- Error Message -->
+            <h2 class="text-xl text-secondary error-message">An error occurred while processing your request.</h2>
+
+            <!-- Request ID (if available) -->
+            @if (Model.ShowRequestId)
+            {
+                <div class="error-request-id">
+                    <p>
+                        <strong>Request ID:</strong> 
+                    </p>
+                    <code>@Model.RequestId</code>
+                </div>
+            }
+
+            <!-- Development Information -->
+            <div class="bg-gray-100 p-6 rounded mb-8 text-left max-w-600 error-info-box">
+                <div class="d-flex">
+                    <i class="fas fa-info-circle text-primary"></i>
+                    <div>
+                        <h3>Development Mode</h3>
+                        <p>
+                            The Development environment provides detailed error information to help with debugging.
+                        </p>
+                        <p>
+                            <strong>⚠️ Security Note:</strong> Don't enable Development mode in production as it may expose sensitive information.
+                        </p>
+                        <p>
+                            To enable debugging locally, set <code>ASPNETCORE_ENVIRONMENT=Development</code> and restart the app.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i>Back to Home
+                </a>
+                <button onclick="location.reload()" class="btn btn-secondary">
+                    <i class="fas fa-redo"></i>Try Again
+                </button>
+            </div>
+
+            <!-- Footer Help -->
+            <div class="error-help-footer">
+                <p>
+                    Need help? <a href="/">Contact Support</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>
-
-<style>
-    .max-w-600 {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
